@@ -55,6 +55,33 @@ header h1{
     border-radius:8px;
     font-weight:bold;
 }
+.tool-card{
+    transition:0.3s;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+}
+
+@media(max-width:600px){
+
+.hero h2{
+    font-size:2rem;
+}
+
+nav a{
+    display:block;
+    margin:10px;
+}
+
+.tool-card{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+}
+
 nav{
     margin-top:15px;
 }
@@ -102,8 +129,34 @@ style="width:80%;max-width:500px;padding:15px;margin-top:30px;border:none;border
 
 <a href="#" class="btn">Explore AI Tools</a>
 
+<div style="margin-top:50px;background:#1e293b;padding:30px;border-radius:15px;max-width:700px;margin-left:auto;margin-right:auto;">
+
+<h2>⭐ Featured AI Tool</h2>
+
+<h3 style="margin-top:15px;">ChatGPT</h3>
+
+<p style="color:#cbd5e1;margin-top:10px;">
+The all-in-one AI assistant for writing, coding, learning, and productivity.
+</p>
+
+<a href="#" class="btn">Explore ChatGPT</a>
+
+</div>
+
 <div style="margin-top:60px;">
     <h2>🔥 Trending AI Tools</h2>
+
+<div style="margin-top:20px;">
+
+<button class="btn" onclick="filterTools('writing')">✍️ Writing</button>
+
+<button class="btn" onclick="filterTools('coding')">💻 Coding</button>
+
+<button class="btn" onclick="filterTools('design')">🎨 Design</button>
+
+<button class="btn" onclick="filterTools('video')">🎬 Video</button>
+
+</div>
 
    <div class="tool-card" style="background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
         <h3>ChatGPT</h3>
@@ -219,6 +272,18 @@ style="width:80%;max-width:500px;padding:15px;margin-top:30px;border:none;border
 
 </div>
 
+<div style="margin-top:60px;text-align:center;">
+
+<h2>🚀 Submit Your AI Tool</h2>
+
+<p style="color:#cbd5e1;margin-top:15px;">
+Have an AI tool? Submit it and get featured on NovaAI Hub.
+</p>
+
+<a href="#" class="btn">Submit Tool</a>
+
+</div>
+
 </section>
 <script>
 function searchTools(){
@@ -240,9 +305,36 @@ tool.style.display="none";
 });
 
 }
+
+<script>
+function filterTools(category){
+
+let tools = document.querySelectorAll(".tool-card");
+
+tools.forEach(tool => {
+
+let text = tool.innerText.toLowerCase();
+
+if(text.includes(category)){
+    tool.style.display="block";
+}else{
+    tool.style.display="none";
+}
+
+});
+
+}
 </script>
 
+</script>
 
+<footer style="background:#111827;padding:20px;text-align:center;margin-top:60px;">
+
+<p>
+© 2026 NovaAI Hub. All rights reserved.
+</p>
+
+</footer>
 
 </body>
 </html>
