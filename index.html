@@ -286,6 +286,7 @@ Have an AI tool? Submit it and get featured on NovaAI Hub.
 
 </section>
 <script>
+
 function searchTools(){
 
 let input = document.querySelector("input").value.toLowerCase();
@@ -297,16 +298,16 @@ tools.forEach(tool => {
 let name = tool.innerText.toLowerCase();
 
 if(name.includes(input)){
-tool.style.display="block";
+    tool.style.display="block";
 }else{
-tool.style.display="none";
+    tool.style.display="none";
 }
 
 });
 
 }
 
-<script>
+
 function filterTools(category){
 
 let tools = document.querySelectorAll(".tool-card");
@@ -324,7 +325,6 @@ if(text.includes(category)){
 });
 
 }
-</script>
 
 </script>
 
