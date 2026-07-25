@@ -70,6 +70,7 @@ Explore thousands of AI tools for writing, coding, design, video, marketing, bus
 </p>
 
 <input
+onkeyup="searchTools()"
 type="text"
 placeholder="Search AI tools..."
 style="width:80%;max-width:500px;padding:15px;margin-top:30px;border:none;border-radius:8px;font-size:16px;">
@@ -81,12 +82,12 @@ style="width:80%;max-width:500px;padding:15px;margin-top:30px;border:none;border
 <div style="margin-top:60px;">
     <h2>🔥 Trending AI Tools</h2>
 
-    <div style="background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
+   <div class="tool-card" style="background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
         <h3>ChatGPT</h3>
         <p>AI assistant for writing, coding, brainstorming, and more.</p>
         <a href="#" class="btn">View Details</a>
  </div>
-    <div style="background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
+    <div class="tool-card" style="background:#1e293b;padding:20px;margin-top:20px;border-radius:10px;max-width:600px;margin-left:auto;margin-right:auto;">
     <h3>Claude</h3>
     <p>AI assistant designed for writing, coding, research, and analysis.</p>
     <a href="#" class="btn">View Details</a>
@@ -95,7 +96,59 @@ style="width:80%;max-width:500px;padding:15px;margin-top:30px;border:none;border
 
 </div>
 
+<div style="margin-top:60px;">
+<h2>📂 AI Tool Categories</h2>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px;">
+
+<div class="tool-card" style="background:#1e293b;padding:20px;border-radius:10px;width:250px;">
+<h3>✍️ Writing AI</h3>
+<p>AI tools for blogs, essays, emails, and content creation.</p>
+</div>
+
+<div style="background:#1e293b;padding:20px;border-radius:10px;width:250px;">
+<h3>💻 Coding AI</h3>
+<p>AI assistants for programming and software development.</p>
+</div>
+
+<div style="background:#1e293b;padding:20px;border-radius:10px;width:250px;">
+<h3>🎨 Design AI</h3>
+<p>AI tools for images, graphics, and creative designs.</p>
+</div>
+
+<div style="background:#1e293b;padding:20px;border-radius:10px;width:250px;">
+<h3>🎬 Video AI</h3>
+<p>AI tools for video creation and editing.</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
+<script>
+function searchTools(){
+
+let input = document.querySelector("input").value.toLowerCase();
+
+let tools = document.querySelectorAll(".tool-card");
+
+tools.forEach(tool => {
+
+let name = tool.innerText.toLowerCase();
+
+if(name.includes(input)){
+tool.style.display="block";
+}else{
+tool.style.display="none";
+}
+
+});
+
+}
+</script>
+
+
 
 </body>
 </html>
